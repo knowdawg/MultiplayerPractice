@@ -12,6 +12,7 @@ size = Vector2(1152, 20)
 position = Vector2(-574, -329)
 
 [node name="Wall1" type="StaticBody2D" parent="Walls"]
+position = Vector2(-3, 264)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall1"]
 position = Vector2(576, 0)
@@ -24,7 +25,7 @@ offset_bottom = 10.0
 color = Color(0, 0, 0, 1)
 
 [node name="Wall2" type="StaticBody2D" parent="Walls"]
-position = Vector2(0, 647)
+position = Vector2(-3, 393)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
 position = Vector2(576, 0)
@@ -37,7 +38,7 @@ offset_bottom = 10.0
 color = Color(0, 0, 0, 1)
 
 [node name="Wall3" type="StaticBody2D" parent="Walls"]
-position = Vector2(1152, -204)
+position = Vector2(689, -246)
 rotation = 1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
@@ -51,7 +52,7 @@ offset_bottom = 10.0
 color = Color(0, 0, 0, 1)
 
 [node name="Wall4" type="StaticBody2D" parent="Walls"]
-position = Vector2(0, -210)
+position = Vector2(458, -247)
 rotation = 1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
@@ -71,6 +72,7 @@ visible = false
 script = ExtResource("1_vuuu1")
 
 [node name="ServerUI" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("2_vuuu1")
 
 [node name="MarginContainer" type="MarginContainer" parent="ServerUI"]
@@ -98,6 +100,7 @@ layout_mode = 2
 text = "Start Client"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
 
 [connection signal="pressed" from="ServerUI/MarginContainer/VBoxContainer/ServerButton" to="ServerUI" method="_on_server_button_pressed"]
 [connection signal="pressed" from="ServerUI/MarginContainer/VBoxContainer/ClientButton" to="ServerUI" method="_on_client_button_pressed"]

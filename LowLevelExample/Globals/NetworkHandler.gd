@@ -21,6 +21,23 @@ var serverPeer : ENetPacketPeer
 var connection : ENetConnection
 var isServer : bool = false
 
+func _ready() -> void:
+	DisplayServer.window_move_to_foreground()
+	
+	var args = OS.get_cmdline_args()
+	var launchAsServer : bool = "--server" in args
+	if launchAsServer:
+		get_window().position = Vector2(0.0, 0.0)
+		
+		startServer()
+	else:
+		if "--window_bl" in args:
+			get_window().position = Vector2(200.0, DisplayServer.screen_get_size().y - get_window().size.y - 200.0)
+		if "--window_br" in args:
+			get_window().position = Vector2(DisplayServer.screen_get_size().x - get_window().size.x - 200.0, DisplayServer.screen_get_size().y - get_window().size.y - 200.0)
+		
+		startClient()
+
 func _process(_delta: float) -> void:
 	if connection == null: return
 	
